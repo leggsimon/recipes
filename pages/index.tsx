@@ -1,26 +1,29 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import styled from 'styled-components';
 
 const RECIPES = [
 	{
+		id: 8,
 		name: 'Caribbean sweet potato and coconut stew',
-		url: '/caribbean-stew',
+		url: '/recipe/caribbean-stew',
 		image: '/images/caribbean-stew.jpg',
 	},
 	{
+		id: 15,
 		name: 'Fish on Vegetable Curry',
-		url: '/fish-on-vegetable-curry',
+		url: '/recipe/fish-on-vegetable-curry',
 		image: '/images/fish-on-vegetable-curry.jpg',
 	},
 	{
+		id: 3,
 		name: 'Pork Fillet with Apple and Mustard Sauce',
-		url: '/pork-fillet-with-apple-and-mustard-sauce',
+		url: '/recipe/pork-fillet-with-apple-and-mustard-sauce',
 		image: '/images/pork-fillet-with-apple-and-mustard-sauce.jpg',
 	},
 	{
+		id: 24,
 		name: 'Creamy mushroom risotto with bacon',
-		url: '/creamy-mushroom-risotto-with-bacon',
+		url: '/recipe/creamy-mushroom-risotto-with-bacon',
 		image: '/images/creamy-mushroom-risotto-with-bacon.jpg',
 	},
 ];
@@ -68,8 +71,9 @@ export default function Home() {
 			<Title>Recipes</Title>
 			<Recipes>
 				{RECIPES.map((recipe) => {
+					const url = `/recipe/${recipe.id}`;
 					return (
-						<Link href={recipe.url}>
+						<Link key={recipe.id} href={url}>
 							<a>
 								<RecipeCard>
 									<RecipeImage src={recipe.image} />
