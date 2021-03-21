@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import Head from 'next/head';
 import { GetStaticPropsResult } from 'next';
 import styled from 'styled-components';
 import recipes, { IRecipe } from '../../data/recipes';
@@ -108,17 +108,13 @@ type RecipeProps = {
 };
 
 export default function Recipe({ recipe }: RecipeProps) {
-	const router = useRouter();
-	const { id } = router.query;
-
-	recipe = recipe || recipes.find((r) => r.id === parseInt(id as string));
-
-	console.log({ id });
-
 	return (
 		<>
+			<Head>
+				<meta property="og:image" content={recipe.mainImage} />
+				<title>{recipe.name}</title>
+			</Head>
 			<RecipeImage src={recipe.mainImage} aria-hidden="true" />
-
 			<Wrapper>
 				<TitleContainer>
 					<Title>{recipe.name}</Title>
