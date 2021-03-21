@@ -49,25 +49,21 @@ export default function Home({ recipes }: HomeProps) {
 		<>
 			<Title>Recipes</Title>
 			<Recipes>
-				{recipes
-					.sort(({ mainImage }) => {
-						return mainImage ? -1 : 1;
-					})
-					.map((recipe) => {
-						const url = `/recipe/${recipe.id}`;
-						return (
-							<Link key={recipe.id} href={url}>
-								<a>
-									<RecipeCard>
-										<RecipeImage
-											src={recipe.mainImage || '/images/placeholder-image.png'}
-										/>
-										<RecipeName>{recipe.name}</RecipeName>
-									</RecipeCard>
-								</a>
-							</Link>
-						);
-					})}
+				{recipes.map((recipe) => {
+					const url = `/recipe/${recipe.id}`;
+					return (
+						<Link key={recipe.id} href={url}>
+							<a>
+								<RecipeCard>
+									<RecipeImage
+										src={recipe.mainImage || '/images/placeholder-image.png'}
+									/>
+									<RecipeName>{recipe.name}</RecipeName>
+								</RecipeCard>
+							</a>
+						</Link>
+					);
+				})}
 			</Recipes>
 		</>
 	);
@@ -76,7 +72,9 @@ export default function Home({ recipes }: HomeProps) {
 export function getStaticProps(): GetStaticPropsResult<HomeProps> {
 	return {
 		props: {
-			recipes,
+			recipes: recipes.sort(({ mainImage }) => {
+				return mainImage ? -1 : 1;
+			}),
 		},
 	};
 }
