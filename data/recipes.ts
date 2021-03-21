@@ -7,6 +7,7 @@ export interface IRecipe {
 		ingredientId: number;
 		amount: number;
 	}[];
+	steps?: string[];
 }
 
 const recipes: IRecipe[] = [
@@ -438,6 +439,15 @@ const recipes: IRecipe[] = [
 				ingredientId: 6,
 				amount: 2,
 			},
+		],
+		steps: [
+			'Peel the onion and garlic and chop finely. Peel the sweet potato and cut into 2 cm cubes. Halve the tomatoes, remove the stalk and seeds and roughly dice the tomato halves. Halve the pointed pepper, remove the seeds and cut the pepper halves into large pieces.',
+			'In a bowl, mix vegetable stock and 150ml hot water into broth then add coconut milk.',
+			'In a separate bowl, peel the banana and break it into pieces. Add Flour, Baking Powder, and Milk, and whisk together. Pluck the parsley leaves and chop finely. Finely chop the chilli. Add half the chopped parsley and the chilli to the batter.',
+			'In a large saucepan over medium heat 1 tbsp oil. Sauté onion and garlic for 3 minutes. Add diced tomatoes and cook for another 3 minutes. Meanwhile, drain the black beans through a sieve and rinse until the water runs clear.',
+			'Add black beans, sweet potato cubes, paprika pieces, spice mixture and the coconut milk mixture and simmer for about 20 minutes until the sauce has thickened a little. Season to taste with salt at the end of the cooking time.',
+			'In a large frying pan heat 1 tbsp oil over medium heat and fry 4 pancakes from the batter for about 5 minutes on each side.',
+			'Serve stew in bowls with leftover parsley on top, pancakes on the side.',
 		],
 	},
 	{

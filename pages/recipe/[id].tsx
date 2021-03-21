@@ -3,9 +3,104 @@ import { GetStaticPropsResult } from 'next';
 import styled from 'styled-components';
 import recipes, { IRecipe } from '../../data/recipes';
 
+const Wrapper = styled.main`
+	position: relative;
+	top: 40vw;
+`;
+
+const RecipeImage = styled.img`
+	width: 100%;
+	position: fixed;
+	top: -80px;
+`;
+
+const TitleContainer = styled.header`
+	text-align: center;
+	max-width: 600px;
+	margin: 0 auto;
+	line-height: 1.3;
+	padding: 1rem 1rem 0 1rem;
+	border-radius: 10px 10px 0 0;
+	background-color: white;
+`;
+
 const Title = styled.h1`
-	color: red;
-	font-size: 50px;
+	font-size: 3.6rem;
+
+	@media (max-width: 500px) {
+		font-size: 2.5rem;
+	}
+`;
+
+const Section = styled.section`
+	background-color: white;
+	padding: 40px;
+`;
+
+const MaxWidthWrapper = styled.div`
+	max-width: 800px;
+	margin: 0 auto;
+`;
+
+const SectionHeading = styled.h2`
+	margin-bottom: 2rem;
+	font-size: 2rem;
+	position: sticky;
+	top: 0;
+	background-color: #ffffff;
+	padding-block: 1rem;
+	z-index: 1;
+
+	@media (max-width: 500px) {
+		font-size: 1.8rem;
+	}
+`;
+
+const IngredientsList = styled.ul`
+	padding: 0;
+`;
+
+const IngredientItem = styled.li`
+	&:before {
+		content: '•';
+		color: hsl(328deg 100% 64%);
+		margin-right: 1rem;
+		font-size: 2rem;
+		line-height: 1;
+		vertical-align: sub;
+	}
+`;
+
+const MethodList = styled.ol`
+	counter-reset: method-counter;
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 0;
+`;
+
+const MethodStepContainer = styled.li`
+	counter-increment: method-counter;
+	padding-bottom: 30px;
+	border-bottom: 1px solid hsl(0 0% 90%);
+	margin-bottom: 20px;
+
+	&::before {
+		font-family: 'Lobster', cursive;
+		content: counter(method-counter);
+		background-color: hsl(328deg 100% 64%);
+		position: absolute;
+		width: 2rem;
+		height: 2rem;
+		border-radius: 50%;
+		display: inline-block;
+		line-height: 2rem;
+		color: hsl(0 0% 100%);
+		text-align: center;
+		margin-right: 0.5rem;
+	}
+`;
+const MethodStep = styled.p`
+	padding-left: 3rem;
 `;
 
 type RecipeProps = {
@@ -20,108 +115,55 @@ export default function Recipe({ recipe }: RecipeProps) {
 
 	console.log({ id });
 
-	return <Title>{recipe.name}</Title>;
 	return (
-		<main>
-			<header>
-				<h1>Caribbean sweet potato and coconut stew</h1>
-			</header>
-			<section>
-				<div className="max-width-wrapper">
-					<h2>Ingredients</h2>
-					<div className="ingredients-lists__wrapper">
-						<div className="ingredients-list__wrapper">
-							<h3 className="ingredients-list__title">Pancakes</h3>
-							<ul role="list" className="ingredients-list">
-								<li className="ingredients-list__item">1 Banana</li>
-								<li className="ingredients-list__item">75g Flour</li>
-								<li className="ingredients-list__item">10g parsley</li>
-								<li className="ingredients-list__item">100 ml milk</li>
-								<li className="ingredients-list__item">2g Baking powder</li>
-								<li className="ingredients-list__item">
-									1 piece red chilli pepper
-								</li>
-							</ul>
-						</div>
-						<div className="ingredients-list__wrapper">
-							<h3 className="ingredients-list__title">Stew</h3>
-							<ul role="list" className="ingredients-list">
-								<li className="ingredients-list__item">
-									4 g Smoked Paprika powder
-								</li>
-								<li className="ingredients-list__item">2g Chilli powder</li>
-								<li className="ingredients-list__item">400g black beans</li>
-								<li className="ingredients-list__item">1 onion</li>
-								<li className="ingredients-list__item">1 clove of garlic</li>
-								<li className="ingredients-list__item">1 sweet potato</li>
-								<li className="ingredients-list__item">2 tomatoes</li>
-								<li className="ingredients-list__item">6g Vegetable broth</li>
-								<li className="ingredients-list__item">1 red pointed pepper</li>
-								<li className="ingredients-list__item">150 ml Coconut milk</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section>
-				<div className="max-width-wrapper">
-					<h2>Method</h2>
-					<ol role="list" className="method-list">
-						<li className="method-list__step">
-							<p className="method-list__step-content">
-								Peel the onion and garlic and chop finely. Peel the sweet potato
-								and cut into 2 cm cubes. Halve the tomatoes, remove the stalk
-								and seeds and roughly dice the tomato halves. Halve the pointed
-								pepper, remove the seeds and cut the pepper halves into large
-								pieces.
-							</p>
-						</li>
-						<li className="method-list__step">
-							<p className="method-list__step-content">
-								In a bowl, mix vegetable stock and 150ml hot water into broth
-								then add coconut milk.
-							</p>
-						</li>
-						<li className="method-list__step">
-							<p className="method-list__step-content">
-								In a separate bowl, peel the banana and break it into pieces.
-								Add Flour, Baking Powder, and Milk, and whisk together. Pluck
-								the parsley leaves and chop finely. Finely chop the chilli. Add
-								half the chopped parsley and the chilli to the batter.
-							</p>
-						</li>
-						<li className="method-list__step">
-							<p className="method-list__step-content">
-								In a large saucepan over medium heat 1 tbsp oil. Sauté onion and
-								garlic for 3 minutes. Add diced tomatoes and cook for another 3
-								minutes. Meanwhile, drain the black beans through a sieve and
-								rinse until the water runs clear.
-							</p>
-						</li>
-						<li className="method-list__step">
-							<p className="method-list__step-content">
-								Add black beans, sweet potato cubes, paprika pieces, spice
-								mixture and the coconut milk mixture and simmer for about 20
-								minutes until the sauce has thickened a little. Season to taste
-								with salt at the end of the cooking time.
-							</p>
-						</li>
-						<li className="method-list__step">
-							<p className="method-list__step-content">
-								In a large frying pan heat 1 tbsp oil over medium heat and fry 4
-								pancakes from the batter for about 5 minutes on each side.
-							</p>
-						</li>
-						<li className="method-list__step">
-							<p className="method-list__step-content">
-								Serve stew in bowls with leftover parsley on top, pancakes on
-								the side.
-							</p>
-						</li>
-					</ol>
-				</div>
-			</section>
-		</main>
+		<>
+			<RecipeImage src={recipe.mainImage} aria-hidden="true" />
+
+			<Wrapper>
+				<TitleContainer>
+					<Title>{recipe.name}</Title>
+				</TitleContainer>
+				<Section>
+					<MaxWidthWrapper>
+						<SectionHeading>Ingredients</SectionHeading>
+						<IngredientsList role="list">
+							<IngredientItem>1 Banana</IngredientItem>
+							<IngredientItem>75g Flour</IngredientItem>
+							<IngredientItem>10g parsley</IngredientItem>
+							<IngredientItem>100 ml milk</IngredientItem>
+							<IngredientItem>2g Baking powder</IngredientItem>
+							<IngredientItem>1 piece red chilli pepper</IngredientItem>
+							<IngredientItem>4 g Smoked Paprika powder</IngredientItem>
+							<IngredientItem>2g Chilli powder</IngredientItem>
+							<IngredientItem>400g black beans</IngredientItem>
+							<IngredientItem>1 onion</IngredientItem>
+							<IngredientItem>1 clove of garlic</IngredientItem>
+							<IngredientItem>1 sweet potato</IngredientItem>
+							<IngredientItem>2 tomatoes</IngredientItem>
+							<IngredientItem>6g Vegetable broth</IngredientItem>
+							<IngredientItem>1 red pointed pepper</IngredientItem>
+							<IngredientItem>150 ml Coconut milk</IngredientItem>
+						</IngredientsList>
+					</MaxWidthWrapper>
+				</Section>
+				{recipe.steps && (
+					<Section>
+						<MaxWidthWrapper>
+							<SectionHeading>Method</SectionHeading>
+							<MethodList role="list">
+								{recipe.steps.map((step, i) => {
+									return (
+										<MethodStepContainer key={i}>
+											<MethodStep>{step}</MethodStep>
+										</MethodStepContainer>
+									);
+								})}
+							</MethodList>
+						</MaxWidthWrapper>
+					</Section>
+				)}
+			</Wrapper>
+		</>
 	);
 }
 
