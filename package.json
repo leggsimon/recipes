@@ -1,13 +1,11 @@
 {
-	"name": "recipes",
+	"name": "with-typescript-styled-components",
 	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
 	"scripts": {
 		"format": "prettier . --write --ignore-path .gitignore",
-		"build": "gulp",
-		"watch": "gulp --watch",
-		"dev": "concurrently \"npm:watch\" \"netlify dev\""
+		"dev": "next",
+		"build": "next build",
+		"start": "next start"
 	},
 	"prettier": {
 		"semi": true,
@@ -15,16 +13,20 @@
 		"singleQuote": true,
 		"useTabs": true
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"dependencies": {
+		"next": "latest",
+		"react": "^16.13.0",
+		"react-dom": "^16.13.0",
+		"styled-components": "^5.0.0"
+	},
 	"devDependencies": {
-		"gulp": "^4.0.2",
-		"gulp-clean-css": "^4.3.0",
-		"gulp-sass": "^4.1.0",
-		"gulp-sourcemaps": "^3.0.0",
-		"netlify-cli": "^3.13.4",
+		"@types/node": "12.0.12",
+		"@types/react": "16.8.23",
+		"@types/react-dom": "16.8.4",
+		"@types/styled-components": "5.0.1",
+		"babel-plugin-styled-components": "^1.10.0",
 		"prettier": "^2.2.1",
-		"sass": "^1.32.8"
-	}
+		"typescript": "4.0"
+	},
+	"license": "MIT"
 }
