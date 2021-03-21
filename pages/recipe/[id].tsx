@@ -2,6 +2,10 @@ import Head from 'next/head';
 import { GetStaticPropsResult } from 'next';
 import styled from 'styled-components';
 import recipes, { IRecipe } from '../../data/recipes';
+import ingredients, {
+	IIngredient,
+	IngredientQuantityType,
+} from '../../data/ingredients';
 
 const Wrapper = styled.main`
 	position: relative;
@@ -104,7 +108,7 @@ const MethodStep = styled.p`
 `;
 
 type RecipeProps = {
-	recipe: IRecipe;
+	recipe: IRecipeWithIngredients;
 };
 
 export default function Recipe({ recipe }: RecipeProps) {
@@ -123,22 +127,9 @@ export default function Recipe({ recipe }: RecipeProps) {
 					<MaxWidthWrapper>
 						<SectionHeading>Ingredients</SectionHeading>
 						<IngredientsList role="list">
-							<IngredientItem>1 Banana</IngredientItem>
-							<IngredientItem>75g Flour</IngredientItem>
-							<IngredientItem>10g parsley</IngredientItem>
-							<IngredientItem>100 ml milk</IngredientItem>
-							<IngredientItem>2g Baking powder</IngredientItem>
-							<IngredientItem>1 piece red chilli pepper</IngredientItem>
-							<IngredientItem>4 g Smoked Paprika powder</IngredientItem>
-							<IngredientItem>2g Chilli powder</IngredientItem>
-							<IngredientItem>400g black beans</IngredientItem>
-							<IngredientItem>1 onion</IngredientItem>
-							<IngredientItem>1 clove of garlic</IngredientItem>
-							<IngredientItem>1 sweet potato</IngredientItem>
-							<IngredientItem>2 tomatoes</IngredientItem>
-							<IngredientItem>6g Vegetable broth</IngredientItem>
-							<IngredientItem>1 red pointed pepper</IngredientItem>
-							<IngredientItem>150 ml Coconut milk</IngredientItem>
+							{recipe.ingredients.map((ingredient, i) => {
+								return <IngredientItem key={i}>{ingredient}</IngredientItem>;
+							})}
 						</IngredientsList>
 					</MaxWidthWrapper>
 				</Section>
@@ -169,14 +160,44 @@ type Context = {
 	};
 };
 
+type Modify<T, R> = Omit<T, keyof R> & R;
+
+type IRecipeWithIngredients = Modify<
+	IRecipe,
+	{
+		ingredients: string[];
+	}
+>;
+
 export function getStaticProps({
 	params,
 }: Context): GetStaticPropsResult<RecipeProps> {
 	const { id } = params;
+	const separators: Record<IngredientQuantityType, string> = {
+		grams: 'g',
+		millilitres: 'ml',
+		individual: ' ×',
+	};
+	const recipe = recipes.find(
+		(r) => r.id === parseInt(id as string),
+	) as IRecipe;
+
+	const recipeWithIngredients = {
+		...recipe,
+		ingredients: recipe.ingredients.map((recipeIngredient) => {
+			const ingredient = ingredients.find(
+				(i) => i.id === recipeIngredient.ingredientId,
+			) as IIngredient;
+
+			return `${recipeIngredient.amount}${
+				separators[ingredient.quantityType]
+			} ${ingredient.name}`;
+		}),
+	};
 
 	return {
 		props: {
-			recipe: recipes.find((r) => r.id === parseInt(id as string)) as IRecipe,
+			recipe: recipeWithIngredients,
 		},
 	};
 }
