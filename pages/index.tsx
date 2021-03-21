@@ -1,32 +1,7 @@
+import { GetStaticPropsResult } from 'next';
 import Link from 'next/link';
 import styled from 'styled-components';
-
-const RECIPES = [
-	{
-		id: 8,
-		name: 'Caribbean sweet potato and coconut stew',
-		url: '/recipe/caribbean-stew',
-		image: '/images/caribbean-stew.jpg',
-	},
-	{
-		id: 15,
-		name: 'Fish on Vegetable Curry',
-		url: '/recipe/fish-on-vegetable-curry',
-		image: '/images/fish-on-vegetable-curry.jpg',
-	},
-	{
-		id: 3,
-		name: 'Pork Fillet with Apple and Mustard Sauce',
-		url: '/recipe/pork-fillet-with-apple-and-mustard-sauce',
-		image: '/images/pork-fillet-with-apple-and-mustard-sauce.jpg',
-	},
-	{
-		id: 24,
-		name: 'Creamy mushroom risotto with bacon',
-		url: '/recipe/creamy-mushroom-risotto-with-bacon',
-		image: '/images/creamy-mushroom-risotto-with-bacon.jpg',
-	},
-];
+import recipes, { IRecipe } from '../data/recipes';
 
 const Title = styled.h1`
 	color: hsla(0, 0%, 15%);
@@ -65,25 +40,43 @@ const RecipeName = styled.h1`
 	padding: 0.8em 1em;
 `;
 
-export default function Home() {
+type HomeProps = {
+	recipes: IRecipe[];
+};
+
+export default function Home({ recipes }: HomeProps) {
 	return (
 		<>
 			<Title>Recipes</Title>
 			<Recipes>
-				{RECIPES.map((recipe) => {
-					const url = `/recipe/${recipe.id}`;
-					return (
-						<Link key={recipe.id} href={url}>
-							<a>
-								<RecipeCard>
-									<RecipeImage src={recipe.image} />
-									<RecipeName>{recipe.name}</RecipeName>
-								</RecipeCard>
-							</a>
-						</Link>
-					);
-				})}
+				{recipes
+					.sort(({ mainImage }) => {
+						return mainImage ? -1 : 1;
+					})
+					.map((recipe) => {
+						const url = `/recipe/${recipe.id}`;
+						return (
+							<Link key={recipe.id} href={url}>
+								<a>
+									<RecipeCard>
+										<RecipeImage
+											src={recipe.mainImage || '/images/placeholder-image.png'}
+										/>
+										<RecipeName>{recipe.name}</RecipeName>
+									</RecipeCard>
+								</a>
+							</Link>
+						);
+					})}
 			</Recipes>
 		</>
 	);
+}
+
+export function getStaticProps(): GetStaticPropsResult<HomeProps> {
+	return {
+		props: {
+			recipes,
+		},
+	};
 }

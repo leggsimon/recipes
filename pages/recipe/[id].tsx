@@ -1,25 +1,15 @@
 import { useRouter } from 'next/router';
 import { GetStaticPropsResult } from 'next';
 import styled from 'styled-components';
-import recipes from '../../data/recipes.json';
+import recipes, { IRecipe } from '../../data/recipes';
 
 const Title = styled.h1`
 	color: red;
 	font-size: 50px;
 `;
 
-type Recipe = {
-	id: number;
-	name: string;
-	recipeUrl: string;
-	ingredients: {
-		ingredientId: number;
-		amount: number;
-	}[];
-};
-
 type RecipeProps = {
-	recipe: Recipe;
+	recipe: IRecipe;
 };
 
 export default function Recipe({ recipe }: RecipeProps) {
@@ -148,7 +138,7 @@ export function getStaticProps({
 
 	return {
 		props: {
-			recipe: recipes.find((r) => r.id === parseInt(id as string)) as Recipe,
+			recipe: recipes.find((r) => r.id === parseInt(id as string)) as IRecipe,
 		},
 	};
 }
