@@ -26,8 +26,13 @@ const RECIPES = [
 ];
 
 const Title = styled.h1`
-	color: red;
-	font-size: 50px;
+	color: hsla(0, 0%, 15%);
+	font-size: 3rem;
+	text-align: center;
+	padding-block: 1rem;
+	background-color: hsla(0, 0%, 100%, 0.95);
+	position: sticky;
+	top: 0;
 `;
 
 const Recipes = styled.section`
@@ -39,9 +44,15 @@ const Recipes = styled.section`
 	padding-inline: 2em;
 `;
 const RecipeCard = styled.article`
-	border: 1px solid black;
-	border-radius: 2px;
+	border: 1px solid hsl(0 0% 90%);
+	border-radius: 15px;
+	overflow: hidden;
 	height: 100%;
+
+	&:hover {
+		border: 1px solid hsl(0 0% 70%);
+		transform: scale(1.005);
+	}
 `;
 const RecipeImage = styled.img`
 	width: 100%;
@@ -54,7 +65,7 @@ const RecipeName = styled.h1`
 export default function Home() {
 	return (
 		<>
-			<Title>My page</Title>
+			<Title>Recipes</Title>
 			<Recipes>
 				{RECIPES.map((recipe) => {
 					return (
