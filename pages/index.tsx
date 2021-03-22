@@ -1,7 +1,7 @@
 import { GetStaticPropsResult } from 'next';
-import Link from 'next/link';
 import styled from 'styled-components';
 import recipes, { IRecipe } from '../data/recipes';
+import { RecipeCard } from '../src/components/RecipeCard/RecipeCard';
 
 const Title = styled.h1`
 	color: hsla(0, 0%, 15%);
@@ -21,25 +21,6 @@ const Recipes = styled.section`
 	grid-gap: 1em;
 	padding-inline: 2em;
 `;
-const RecipeCard = styled.article`
-	border: 1px solid hsl(0 0% 90%);
-	border-radius: 15px;
-	overflow: hidden;
-	height: 100%;
-
-	&:hover {
-		border: 1px solid hsl(0 0% 70%);
-		transform: scale(1.005);
-	}
-`;
-const RecipeImage = styled.img`
-	width: 100%;
-	display: block;
-`;
-const RecipeName = styled.h1`
-	padding: 0.8em 1em;
-	font-family: var(--font-family-body);
-`;
 
 type HomeProps = {
 	recipes: IRecipe[];
@@ -50,21 +31,9 @@ export default function Home({ recipes }: HomeProps) {
 		<>
 			<Title>Recipes</Title>
 			<Recipes>
-				{recipes.map((recipe) => {
-					const url = `/recipe/${recipe.id}`;
-					return (
-						<Link key={recipe.id} href={url}>
-							<a>
-								<RecipeCard>
-									<RecipeImage
-										src={recipe.mainImage || '/images/placeholder-image.png'}
-									/>
-									<RecipeName>{recipe.name}</RecipeName>
-								</RecipeCard>
-							</a>
-						</Link>
-					);
-				})}
+				{recipes.map((recipe) => (
+					<RecipeCard key={recipe.id} recipe={recipe} />
+				))}
 			</Recipes>
 		</>
 	);

@@ -1,5 +1,6 @@
-import Head from 'next/head';
 import { GetStaticPropsResult } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
 import styled from 'styled-components';
 import recipes, { IRecipe } from '../../data/recipes';
 import ingredients, {
@@ -9,13 +10,16 @@ import ingredients, {
 
 const Wrapper = styled.main`
 	position: relative;
-	top: 40vw;
+	top: 50%;
 `;
 
-const RecipeImage = styled.img`
-	width: 100%;
+const RecipeImage = styled.figure`
+	max-width: 1000px;
 	position: fixed;
 	top: -80px;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
 `;
 
 const TitleContainer = styled.header`
@@ -118,7 +122,14 @@ export default function Recipe({ recipe }: RecipeProps) {
 				<meta property="og:image" content={recipe.mainImage} />
 				<title>{recipe.name}</title>
 			</Head>
-			<RecipeImage src={recipe.mainImage} aria-hidden="true" />
+			<RecipeImage>
+				<Image
+					src={recipe.mainImage || '/images/placeholder-image.png'}
+					layout="responsive"
+					width={350}
+					height={350 / 1.5}
+				/>
+			</RecipeImage>
 			<Wrapper>
 				<TitleContainer>
 					<Title>{recipe.name}</Title>
