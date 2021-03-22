@@ -6,7 +6,7 @@ module.exports = withPWA({
 		dest: 'public',
 		runtimeCaching: runtimeCaching.map((rc) => {
 			if (rc.options && rc.options.cacheName === 'static-image-assets') {
-				rc.options.cacheName.expiration.maxAgeSeconds = 24 * 60 * 60 * 14; // 2 weeks
+				rc.options.expiration.maxAgeSeconds = 24 * 60 * 60 * 14; // 2 weeks
 			}
 
 			return rc;
