@@ -38,6 +38,7 @@ const RecipeImage = styled.img`
 `;
 const RecipeName = styled.h1`
 	padding: 0.8em 1em;
+	font-family: var(--font-family-body);
 `;
 
 type HomeProps = {
@@ -72,9 +73,7 @@ export default function Home({ recipes }: HomeProps) {
 export function getStaticProps(): GetStaticPropsResult<HomeProps> {
 	return {
 		props: {
-			recipes: recipes.sort(({ mainImage }) => {
-				return mainImage ? -1 : 1;
-			}),
+			recipes,
 		},
 	};
 }
