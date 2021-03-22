@@ -1,24 +1,18 @@
-// next.config.js
-const withOffline = require('next-offline');
+const withPWA = require('next-pwa');
 
-module.exports = withOffline({
-	workboxOpts: {
-		generateInDevMode: true,
-		swDest: '../public/service-worker.js', // this path is relative to the generated `.next` directory
-		runtimeCaching: [
-			{
-				urlPattern: /public\/images/,
-				handler: 'CacheFirst',
-			},
-			{
-				urlPattern: /api/,
-				handler: 'NetworkFirst',
-				options: {
-					cacheableResponse: {
-						statuses: [0, 200],
-					},
+module.exports = withPWA({
+	pwa: {
+		dest: 'public',
+		runtimeCaching: {
+			urlPattern: /\/_next\/image?url=.*$/i,
+			handler: 'StaleWhileRevalidate',
+			options: {
+				cacheName: 'next-image',
+				expiration: {
+					maxEntries: 32,
+					maxAgeSeconds: 24 * 60 * 60 * 2, // 48 hours
 				},
 			},
-		],
+		},
 	},
 });

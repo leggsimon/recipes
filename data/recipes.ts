@@ -682,7 +682,7 @@ const recipes: IRecipe[] = [
 		recipeUrl:
 			'https://www.hellofresh.de/recipes/spanish-style-flammkuchen-mit-chorizo-5f7d8a0373e82011896497be',
 		ingredients: [],
-		mainImage: '/images/spanish-style-tarte-flambée-with-chorizo.jpeg',
+		mainImage: '/images/spanish-style-tarte-flambee-with-chorizo.jpeg',
 	},
 	{
 		id: 14,
