@@ -2,7 +2,7 @@ export interface IRecipe {
 	id: number;
 	name: string;
 	recipeUrl: string;
-	mainImage?: string;
+	mainImage: string;
 	ingredients: {
 		ingredientId: number;
 		amount: number;
@@ -58,6 +58,7 @@ const recipes: IRecipe[] = [
 				amount: 1,
 			},
 		],
+		mainImage: '/images/burger-with-pear-and-onion-chutney.jpeg',
 	},
 	{
 		id: 2,
@@ -106,13 +107,14 @@ const recipes: IRecipe[] = [
 				amount: 1,
 			},
 		],
+		mainImage: '/images/fried-venison-steak-with-onion-sauce.jpeg',
 	},
 	{
 		id: 3,
 		name: 'Pork fillet with apple and mustard sauce',
 		recipeUrl:
 			'https://www.hellofresh.de/recipes/schweinefilet-mit-apfel-senf-sosze-5fa27c2ff1ec366d3b2e0603',
-		mainImage: '/images/pork-fillet-with-apple-and-mustard-sauce.jpg',
+		mainImage: '/images/pork-fillet-with-apple-and-mustard-sauce.jpeg',
 		ingredients: [
 			{
 				ingredientId: 2,
@@ -227,6 +229,7 @@ const recipes: IRecipe[] = [
 				amount: 4,
 			},
 		],
+		mainImage: '/images/enchiladas-with-spicy-tomato-sauce.jpeg',
 	},
 	{
 		id: 5,
@@ -275,6 +278,7 @@ const recipes: IRecipe[] = [
 				amount: 1,
 			},
 		],
+		mainImage: '/images/boulette-with-apple-and-bacon-sauce.jpeg',
 	},
 	{
 		id: 6,
@@ -327,6 +331,7 @@ const recipes: IRecipe[] = [
 				amount: 40,
 			},
 		],
+		mainImage: '/images/pork-fillet-with-honey-and-rosemary-sauce.jpeg',
 	},
 	{
 		id: 7,
@@ -375,13 +380,14 @@ const recipes: IRecipe[] = [
 				amount: 1,
 			},
 		],
+		mainImage: '/images/indian-curry-fish-with-spicy-zucchini.jpeg',
 	},
 	{
 		id: 8,
 		name: 'Caribbean sweet potato and coconut stew',
 		recipeUrl:
 			'https://www.hellofresh.de/recipes/karibischer-suszkartoffel-kokos-eintopf-5f994c68334c8e3ebd476de0',
-		mainImage: '/images/caribbean-stew.jpg',
+		mainImage: '/images/caribbean-sweet-potato-and-coconut-stew.jpeg',
 		ingredients: [
 			{
 				ingredientId: 8,
@@ -509,6 +515,7 @@ const recipes: IRecipe[] = [
 				amount: 20,
 			},
 		],
+		mainImage: '/images/chicken-breast-in-fruity-cranberry-sauce.jpeg',
 	},
 	{
 		id: 10,
@@ -541,6 +548,7 @@ const recipes: IRecipe[] = [
 				amount: 1,
 			},
 		],
+		mainImage: '/images/apple-and-onion-galette-with-fresh-goat-cheese.jpeg',
 	},
 	{
 		id: 11,
@@ -605,6 +613,7 @@ const recipes: IRecipe[] = [
 				amount: 1,
 			},
 		],
+		mainImage: '/images/vegan-peanut-curry-with-coconut-rice.jpeg',
 	},
 	{
 		id: 12,
@@ -661,6 +670,7 @@ const recipes: IRecipe[] = [
 				amount: 4,
 			},
 		],
+		mainImage: '/images/sweet-and-sour-chicken-pan.jpeg',
 	},
 	{
 		id: 13,
@@ -668,6 +678,7 @@ const recipes: IRecipe[] = [
 		recipeUrl:
 			'https://www.hellofresh.de/recipes/spanish-style-flammkuchen-mit-chorizo-5f7d8a0373e82011896497be',
 		ingredients: [],
+		mainImage: '/images/spanish-style-tarte-flambée-with-chorizo.jpeg',
 	},
 	{
 		id: 14,
@@ -736,13 +747,14 @@ const recipes: IRecipe[] = [
 				amount: 8,
 			},
 		],
+		mainImage: '/images/sesame-chicken-with-teriyaki-stir-fry.jpeg',
 	},
 	{
 		id: 15,
 		name: 'Fish on a vegetable curry',
 		recipeUrl:
 			'https://www.hellofresh.de/recipes/seehecht-auf-buntem-gemusecurry-5f77114997f39f06e91decdd',
-		mainImage: '/images/fish-on-vegetable-curry.jpg',
+		mainImage: '/images/fish-on-a-vegetable-curry.jpeg',
 		ingredients: [
 			{
 				ingredientId: 47,
@@ -821,6 +833,7 @@ const recipes: IRecipe[] = [
 				amount: 200,
 			},
 		],
+		mainImage: '/images/meatballs-filled-with-mozzarella.jpeg',
 	},
 	{
 		id: 17,
@@ -873,6 +886,7 @@ const recipes: IRecipe[] = [
 				amount: 150,
 			},
 		],
+		mainImage: '/images/pork-fillet-in-plum-sauce.jpeg',
 	},
 	{
 		id: 18,
@@ -929,6 +943,7 @@ const recipes: IRecipe[] = [
 				amount: 1,
 			},
 		],
+		mainImage: '/images/fish-in-coconut-panko-with-curry-rice.jpeg',
 	},
 	{
 		id: 19,
@@ -981,6 +996,7 @@ const recipes: IRecipe[] = [
 				amount: 1,
 			},
 		],
+		mainImage: '/images/linguine-with-blue-cheese-sauce.jpeg',
 	},
 	{
 		id: 20,
@@ -1021,6 +1037,7 @@ const recipes: IRecipe[] = [
 				amount: 20,
 			},
 		],
+		mainImage: '/images/pork-fillet-with-spicy-apricot-sauce.jpeg',
 	},
 	{
 		id: 21,
@@ -1073,6 +1090,7 @@ const recipes: IRecipe[] = [
 				amount: 2,
 			},
 		],
+		mainImage: '/images/meatball-pan-with-paprika-vegetables.jpeg',
 	},
 	{
 		id: 22,
@@ -1125,6 +1143,7 @@ const recipes: IRecipe[] = [
 				amount: 35,
 			},
 		],
+		mainImage: '/images/kiwi-halloumi-burger-with-yogurt-aioli.jpeg',
 	},
 	{
 		id: 23,
@@ -1177,13 +1196,14 @@ const recipes: IRecipe[] = [
 				amount: 100,
 			},
 		],
+		mainImage: '/images/harissa-chicken-breast-with-aubergine.jpeg',
 	},
 	{
 		id: 24,
 		name: 'Creamy Mushroom Risotto with Bacon',
 		recipeUrl:
 			'https://www.hellofresh.de/recipes/cremiges-pilzrisotto-mit-bacon-5fb3f9ac70d53179a859c552',
-		mainImage: '/images/creamy-mushroom-risotto-with-bacon.jpg',
+		mainImage: '/images/creamy-mushroom-risotto-with-bacon.jpeg',
 		ingredients: [
 			{
 				ingredientId: 64,
@@ -1286,6 +1306,7 @@ const recipes: IRecipe[] = [
 				amount: 1,
 			},
 		],
+		mainImage: '/images/couscous-with-dukkah-oven-vegetables.jpeg',
 	},
 	{
 		id: 26,
@@ -1346,6 +1367,7 @@ const recipes: IRecipe[] = [
 				amount: 10,
 			},
 		],
+		mainImage: '/images/honey-teriyaki-burger.jpeg',
 	},
 ];
 
