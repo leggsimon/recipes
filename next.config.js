@@ -2,8 +2,9 @@
 const withOffline = require('next-offline');
 
 module.exports = withOffline({
-	generateInDevMode: true,
 	workboxOpts: {
+		generateInDevMode: true,
+		swDest: '../public/service-worker.js', // this path is relative to the generated `.next` directory
 		runtimeCaching: [
 			{
 				urlPattern: /public\/images/,
