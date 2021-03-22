@@ -35,3 +35,7 @@ yarn-error.log*
 
 # misc
 old*
+
+# generated files
+public/sw*.js
+public/workbox*.js
