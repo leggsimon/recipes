@@ -133,12 +133,12 @@ export default function Recipe({ recipe }: RecipeProps) {
 						</IngredientsList>
 					</MaxWidthWrapper>
 				</Section>
-				{recipe.steps && (
+				{recipe.method && (
 					<Section>
 						<MaxWidthWrapper>
 							<SectionHeading>Method</SectionHeading>
 							<MethodList role="list">
-								{recipe.steps.map((step, i) => {
+								{recipe.method.steps.map((step, i) => {
 									return (
 										<MethodStepContainer key={i}>
 											<MethodStep>{step}</MethodStep>
