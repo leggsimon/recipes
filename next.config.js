@@ -14,8 +14,8 @@ module.exports = withPWA({
 					},
 				};
 			}
-		
+
 			return rc;
-		});,
+		}),
 	},
 });
