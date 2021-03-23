@@ -2,18 +2,17 @@ import { GetStaticPropsResult } from 'next';
 import styled from 'styled-components';
 import recipes, { IRecipe } from '../data/recipes';
 import { RecipeCard } from '../src/components/RecipeCard/RecipeCard';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Title = styled.h1`
 	color: hsla(0, 0%, 15%);
 	font-size: 3rem;
 	text-align: center;
-	padding-block: 1rem;
+	padding: 1.5rem 0;
 	background-color: hsla(0, 0%, 100%, 0.95);
-	position: sticky;
-	top: 0;
 `;
 
-const Recipes = styled.section`
+const Recipes = styled(motion.section)`
 	max-width: 1000px;
 	margin: 0 auto;
 	display: grid;
@@ -30,11 +29,32 @@ export default function Home({ recipes }: HomeProps) {
 	return (
 		<>
 			<Title>Recipes</Title>
-			<Recipes>
-				{recipes.map((recipe) => (
-					<RecipeCard key={recipe.id} recipe={recipe} />
-				))}
-			</Recipes>
+			<AnimatePresence>
+				<Recipes
+					layout
+					initial="initial"
+					animate="enter"
+					exit="exit"
+					variants={{
+						enter: {
+							transition: {
+								staggerChildren: 0.1,
+							},
+						},
+						exit: {
+							transition: {
+								staggerDirection: -1,
+							},
+						},
+					}}
+				>
+					{recipes.map((recipe) => (
+						<motion.div key={recipe.id}>
+							<RecipeCard recipe={recipe} />
+						</motion.div>
+					))}
+				</Recipes>
+			</AnimatePresence>
 		</>
 	);
 }

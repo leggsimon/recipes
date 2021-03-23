@@ -2,21 +2,22 @@ import { GetStaticPropsResult } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import recipes, { IRecipe } from '../../data/recipes';
 import ingredients, {
 	IIngredient,
 	IngredientQuantityType,
 } from '../../data/ingredients';
 
-const Wrapper = styled.main`
-	position: relative;
-	top: 50%;
+const Wrapper = styled(motion.main)`
+	/* position: relative; */
+	/* top: 50%; */
 `;
 
-const RecipeImage = styled.figure`
+const RecipeImage = styled(motion.figure)`
 	max-width: 1000px;
 	position: fixed;
-	top: -80px;
+	top: 0;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
@@ -115,6 +116,47 @@ type RecipeProps = {
 	recipe: IRecipeWithIngredients;
 };
 
+let easing = [0.175, 0.85, 0.42, 0.96];
+
+// const imageVariants = {
+// 	exit: {
+// 		y: 150,
+// 		opacity: 0,
+// 		transition: {
+// 			duration: 0.5,
+// 			ease: easing,
+// 		},
+// 	},
+// 	enter: {
+// 		y: 0,
+// 		opacity: 1,
+// 		transition: {
+// 			duration: 0.5,
+// 			ease: easing,
+// 		},
+// 	},
+// };
+
+const textVariants = {
+	exit: {
+		y: 600,
+		opacity: 0,
+		transition: {
+			duration: 0.5,
+			ease: easing,
+		},
+	},
+	enter: {
+		y: 300,
+		opacity: 1,
+		transition: {
+			delay: 0.3,
+			duration: 0.5,
+			ease: easing,
+		},
+	},
+};
+
 export default function Recipe({ recipe }: RecipeProps) {
 	return (
 		<>
@@ -122,45 +164,50 @@ export default function Recipe({ recipe }: RecipeProps) {
 				<meta property="og:image" content={recipe.mainImage} />
 				<title>{recipe.name}</title>
 			</Head>
-			<RecipeImage>
-				<Image
-					src={recipe.mainImage || '/images/placeholder-image.png'}
-					layout="responsive"
-					width={350}
-					height={350 / 1.5}
-				/>
-			</RecipeImage>
-			<Wrapper>
-				<TitleContainer>
-					<Title>{recipe.name}</Title>
-				</TitleContainer>
-				<Section>
-					<MaxWidthWrapper>
-						<SectionHeading>Ingredients</SectionHeading>
-						<IngredientsList role="list">
-							{recipe.ingredients.map((ingredient, i) => {
-								return <IngredientItem key={i}>{ingredient}</IngredientItem>;
-							})}
-						</IngredientsList>
-					</MaxWidthWrapper>
-				</Section>
-				{recipe.method && (
+			<motion.div initial="exit" animate="enter" exit="exit">
+				<RecipeImage
+					// variants={imageVariants}
+					layoutId={`image-${recipe.id}`}
+				>
+					<Image
+						src={recipe.mainImage || '/images/placeholder-image.png'}
+						layout="responsive"
+						width={350}
+						height={350 / 1.5}
+					/>
+				</RecipeImage>
+				<Wrapper variants={textVariants}>
+					<TitleContainer>
+						<Title>{recipe.name}</Title>
+					</TitleContainer>
 					<Section>
 						<MaxWidthWrapper>
-							<SectionHeading>Method</SectionHeading>
-							<MethodList role="list">
-								{recipe.method.steps.map((step, i) => {
-									return (
-										<MethodStepContainer key={i}>
-											<MethodStep>{step}</MethodStep>
-										</MethodStepContainer>
-									);
+							<SectionHeading>Ingredients</SectionHeading>
+							<IngredientsList role="list">
+								{recipe.ingredients.map((ingredient, i) => {
+									return <IngredientItem key={i}>{ingredient}</IngredientItem>;
 								})}
-							</MethodList>
+							</IngredientsList>
 						</MaxWidthWrapper>
 					</Section>
-				)}
-			</Wrapper>
+					{recipe.method && (
+						<Section>
+							<MaxWidthWrapper>
+								<SectionHeading>Method</SectionHeading>
+								<MethodList role="list">
+									{recipe.method.steps.map((step, i) => {
+										return (
+											<MethodStepContainer key={i}>
+												<MethodStep>{step}</MethodStep>
+											</MethodStepContainer>
+										);
+									})}
+								</MethodList>
+							</MaxWidthWrapper>
+						</Section>
+					)}
+				</Wrapper>
+			</motion.div>
 		</>
 	);
 }
