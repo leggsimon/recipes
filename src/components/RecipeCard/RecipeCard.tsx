@@ -4,14 +4,15 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 const Wrapper = styled.article`
-	border: 1px solid hsl(0 0% 90%);
-	border-radius: 15px;
+	border-radius: 3px 3px 0 0;
+	box-shadow: 0px 5px 7px 0px hsl(0deg 0% 70%);
 	overflow: hidden;
 	height: 100%;
 
 	&:hover {
-		border: 1px solid hsl(0 0% 70%);
 		transform: scale(1.005);
+		/* Add some extra box shadow to give scale impression */
+		box-shadow: 0px 5px 12px 5px hsl(0deg 0% 70%);
 	}
 `;
 

@@ -2,6 +2,7 @@ import { GetStaticPropsResult } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import styled from 'styled-components';
+import { Layout } from '../../src/components/Layout/Layout';
 import recipes, { IRecipe } from '../../data/recipes';
 import ingredients, {
 	IIngredient,
@@ -117,7 +118,7 @@ type RecipeProps = {
 
 export default function Recipe({ recipe }: RecipeProps) {
 	return (
-		<>
+		<Layout>
 			<Head>
 				<meta property="og:image" content={recipe.mainImage} />
 				<title>{recipe.name}</title>
@@ -161,7 +162,7 @@ export default function Recipe({ recipe }: RecipeProps) {
 					</Section>
 				)}
 			</Wrapper>
-		</>
+		</Layout>
 	);
 }
 

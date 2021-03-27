@@ -14,6 +14,7 @@
 		"useTabs": true
 	},
 	"dependencies": {
+		"framer-motion": "^4.0.3",
 		"next": "latest",
 		"next-pwa": "^5.0.6",
 		"react": "^16.13.0",
