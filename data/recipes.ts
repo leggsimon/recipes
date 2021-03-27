@@ -1201,6 +1201,20 @@ const recipes: IRecipe[] = [
 			},
 		],
 		mainImage: '/images/harissa-chicken-breast-with-aubergine.jpeg',
+		method: {
+			steps: [
+				'Season the chicken breast fillets with olive oil and spices (chilli powder, ground cumin, smoked paprika, tikka masala powder, oregano, basil, and ground coriander).',
+				'Heat water in the kettle. Preheat the oven to 220 ° C top / bottom heat (200 ° C convection).',
+				'Cut off the ends of the aubergine and cut the aubergine into 2 cm cubes. Peel the garlic and onion and finely chop both separately. Pluck the mint and parsley leaves and finely chop them separately. Mix vegetable stock with 200ml hot water.',
+				'Put aubergine cubes in a baking dish, half the garlic, spices, salt, pepper, and olive oil. Put aside for now.',
+				'Put onion cubes, other half of garlic and tomato pesto in a small saucepan with olive oil and sauté for 1 - 2 minutes over medium heat. Rinse the quinoa in a sieve with cold water until it runs clear. Put in quinoa and vegetable broth, bring everything to the boil once and then simmer with the lid closed on the lowest setting for 15 minutes. Then take it off the stove and let it soak for 10 minutes.',
+				'Put the aubergine in the oven and bake for 20-25 minutes',
+				'In a large pan heat 1 tbsp of olive oil and sauté the chicken breast fillets for 1 - 2 minutes on each side until they are lightly browned. Add the fried chicken breast fillets to the baking dish for the last 12-14 minutes and bake until the chicken is no longer pink on the inside.',
+				'In a small bowl, mix the yogurt with the chopped mint. Season the dip with salt and pepper.',
+				'When the cooking time is over, fold half of the chopped parsley into the quinoa.',
+				'Take the chicken breast and vegetables out of the oven and arrange on plates. Serve with tomato quinoa and mint dip. Garnish with the remaining parsley.',
+			],
+		},
 	},
 	{
 		id: 24,
