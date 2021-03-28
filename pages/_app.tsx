@@ -2,6 +2,7 @@
 import type { AppProps /*, AppContext */ } from 'next/app';
 import Head from 'next/head';
 import GlobalStyles from '../src/components/GlobalStyles/GlobalStyles';
+import { AnimatePresence } from 'framer-motion';
 
 function App({ Component, pageProps }: AppProps) {
 	return (
@@ -13,7 +14,9 @@ function App({ Component, pageProps }: AppProps) {
 					rel="stylesheet"
 				/>
 			</Head>
-			<Component {...pageProps} />
+			<AnimatePresence exitBeforeEnter>
+				<Component {...pageProps} />
+			</AnimatePresence>
 			<GlobalStyles />
 		</>
 	);
