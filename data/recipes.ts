@@ -1001,6 +1001,15 @@ const recipes: IRecipe[] = [
 			},
 		],
 		mainImage: '/images/linguine-with-blue-cheese-sauce.jpeg',
+		method: {
+			steps: [
+				'Heat plenty of water in the kettle. Put on a large saucepan with plenty of water, add salt and bring to the boil.',
+				'Remove the ends from the broccoli. Pluck the parsley leaves and chop finely. Strip the thyme leaves from the stems. Cut the blue cheese into approx. 2 cm cubes. ',
+				'Roast the almond flakes in a large pan for 1 - 2 minutes without adding any fat, until the flakes are brown and fragrant. Remove and set aside. Place the bacon slices in the pan and fry them over a medium heat for about 5 minutes, turning occasionally. Remove and let degrease on kitchen paper.',
+				'Add the linguine and broccolini to the boiling water and cook for 4 - 5 minutes, until the broccolini is soft but still firm to the bite. Then drain the linguine and broccolini through a sieve and drain.',
+				'In the same pan, sauté the garlic and onion paste for 1 - 2 minutes. Add the cream, blue cheese and grated hard cheese and heat for 2 - 3 minutes, stirring, until both types of cheese have melted. Mix the linguine and broccoli into the sauce. Season to taste with salt and pepper. Distribute the finished pasta on plates. Top with bacon slices, sprinkle with flaked almonds and chopped herbs and enjoy.',
+			],
+		},
 	},
 	{
 		id: 20,
