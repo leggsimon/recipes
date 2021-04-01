@@ -61,6 +61,19 @@ const recipes: IRecipe[] = [
 			},
 		],
 		mainImage: '/images/burger-with-pear-and-onion-chutney.jpeg',
+		method: {
+			steps: [
+				'Preheat the oven to 220 ° C top / bottom heat (200 ° C convection).',
+				'Depending on the size, quarter or halve unpeeled potatoes lengthways and place on a baking sheet lined with baking paper, sprinkle with salt, pepper and 1 tbsp olive oil.',
+				'Peel the onion and cut into fine strips. Peel and quarter the pear and core. Roughly grate the pear quarters. Peel the garlic and chop very finely.',
+				'In a large bowl, mix the minced meat, garlic, salt & pepper. From the mass form 2 finger-thick patties. TIP: Try to shape the patties flat, otherwise they will contract too much during frying and become too thick.',
+				'Put the potatoes in the oven for 25-30 minutes.',
+				'In a small saucepan heat 1 tbsp olive oil over low heat. Put in onion strips, balsamic cream, grated pear and 2 tbsp of water. Simmer for approx. 14-16 minutes over low heat, until all the liquid has evaporated and the chutney is thick and sticky. Season to taste with salt and pepper.',
+				'In a large pan heat 1 tbsp of oil and fry the patties on one side for approx. 5 minutes. Turn the patties over, distribute the blue cheese (according to taste) on the fried sides and fry the patties for another 5 minutes until the meat is cooked through.',
+				'Halve the brioche buns and place in the oven with the potatoes for the last 1 - 2 minutes. Meanwhile, pluck off the lettuce leaves.',
+				'After baking, coat the burger buns with a dollop of pear chutney on the underside and on the top and top with salad leaves and patties. Enjoy with potato wedges and mayonnaise.',
+			],
+		},
 	},
 	{
 		id: 2,
@@ -163,6 +176,19 @@ const recipes: IRecipe[] = [
 				amount: 10,
 			},
 		],
+		method: {
+			steps: [
+				'Heat plenty of water in the kettle. Pour plenty of hot water into a large saucepan and a smaller saucepan, add salt to both and bring to the boil.',
+				'Peel the potatoes and quarter or halve depending on the size. Divide the broccoli into florets. Remove the core of the apple and cut the apple into approx. 1 cm wide slices. Peel and finely chop the onion. Finely chop the parsley. Pluck the thyme leaves and roughly chop. Cut pork tenderloin into 4 medallions of the same size and lightly salt.',
+				'Prepare beef broth with beef stock and 100ml hot water.',
+				'Add the potato quarters to the boiling water, reduce the heat and cook for 15-20 minutes until soft. Towards the end, add broccoli to the smaller saucepan and boil for 3 minutes.',
+				'In a large pan heat 1 tbsp olive oil over medium heat and sear the pork fillets and apple wedges for approx 5 minutes until the apple is soft and the medallions are light pink. Then remove the meat and apple from the pan and set aside in some aluminium foil to keep warm.',
+				'Fry the onion cubes in the same pan without adding any further fat for 2 - 3 minutes. Deglaze with crème fraîche, beef broth, mustard and thyme. Reduce for approx 3 minutes until the sauce has thickened. Season to taste with salt and pepper. Add the apple and medallions to the sauce and keep warm until potatoes are done.',
+				'Drain the brocolli in a colander.',
+				'Drain the potatoes in a colander reserving a small amount of the water. Add back to empty saucepan. Then mash the potatoes with butter, the cooking water. Add salt and pepper to taste.',
+				'Spread the mashed potatoes and broccoli on plates and sprinkle with parsley. Serve with pork medallions and enjoy with apple and mustard sauce.',
+			],
+		},
 	},
 	{
 		id: 4,
@@ -232,6 +258,20 @@ const recipes: IRecipe[] = [
 			},
 		],
 		mainImage: '/images/enchiladas-with-spicy-tomato-sauce.jpeg',
+		method: {
+			steps: [
+				'Preheat the oven to 200 ° C top / bottom heat (180 ° C convection). Boil some water in the kettle.',
+				'Halve the pepper, remove the core and cut the pepper halves into strips. Put black beans in a colander and rinse under running water until it runs clear. Peel and finely chop garlic. Cut the chilli into rings (attention: spicy!). Quarter or eighth of the mushrooms depending on their size. Cut the white and green parts of the spring onions separately into thin rings. Roughly grate cheese.',
+				'Prepare vegatable broth with vegetable stock and 100ml boiling water.',
+				'In a large pan heat 1 tbsp olive oil over medium heat and sauté the garlic, paprika, mushrooms and white spring onion rings for approx. 3 minutes. Add black beans and fry for 2 minutes. Add vegetable broth and simmer for 6 - 8 minutes, until the peppers are soft and the water has boiled away.',
+				'Prepare tomato broth with tomato paste and 150ml boiling water.',
+				'After simmering, add 2 tbsp sour cream to the beans and season with salt & pepper to taste and mix together.',
+				'Fill the tortilla wraps with the bean mixture and roll up. Place the rolls close together in a baking dish.',
+				'Melt butter in the same pan over medium heat, add “Hello Fiesta” spice mixture and heat for approx. 30 seconds. Add tomato broth and stir into a sauce. Season to taste with salt and pepper. Spread the tomato sauce over the enchiladas and top with the chili rings. Crumble the cheese mix over it. Bake the enchiladas in the oven for 10-15 minutes, until the cheese is golden brown.',
+				'Wash the lime with hot water, and finely grate the peel. Halve the lime and squeeze half of the lime into a small bowl. Cut the other half into wedges. Halve the tomatoes, remove the stalk and seeds and cut the tomato halves into approx. 2 cm cubes. Add the tomato and green spring onion rings to the lime juice and add 1 tsp sugar, stir and let marinate.',
+				'In a second small bowl, add the remaining sour cream with 1 tsp of the lime zest and season with salt and pepper. Spread the enchiladas on plates and enjoy with tomato salsa, lemon sour cream and lime wedges. Good Appetite!',
+			],
+		},
 	},
 	{
 		id: 5,
@@ -281,6 +321,18 @@ const recipes: IRecipe[] = [
 			},
 		],
 		mainImage: '/images/boulette-with-apple-and-bacon-sauce.jpeg',
+		method: {
+			steps: [
+				'Boil plenty of salted water in a saucepan.',
+				'Peel the potatoes and half or quarter depending on the size and put aside. Finely chop the parsley leaves.',
+				'Mix the minced meat with salt and pepper in a large bowl, beat in the egg and add half of the chopped parsley, knead everything well and form 2 meatballs. (Tip: Adding an egg will make the meatball more tender, but you can also leave it out.)',
+				'Peel and halve the onions and cut into fine strips. Quarter the apple, remove the core and cut the apple quarters into smaller slices.',
+				'Put the potatoes in the boiling water. Let the potatoes simmer for about 15 minutes until they are soft.',
+				'Heat 1 tbsp oil in a large pan over medium heat. Add the meatballs, diced bacon and onion strips. Fry the meatballs for approx. 5 minutes on each side, until they are no longer pink on the inside. Stir the onion strips and bacon in between. After the cooking time, remove the meatballs from the pan and keep them warm.',
+				'Put apple wedges in the pan and sprinkle with cream and 75 ml water. Stir in the "Hello Muskat" spice mixture and season to taste with salt and pepper, simmer the sauce for approx. 5 minutes.',
+				'Drain the potatoes using the lid, add butter and mash the potatoes. Season to taste with salt and pepper. Distribute mashed potatoes and meatballs on plates, enjoy with apple and bacon sauce and the remaining parsley.',
+			],
+		},
 	},
 	{
 		id: 6,
@@ -334,6 +386,19 @@ const recipes: IRecipe[] = [
 			},
 		],
 		mainImage: '/images/pork-fillet-with-honey-and-rosemary-sauce.jpeg',
+		method: {
+			steps: [
+				'Fill a large pot and a smaller pot with plenty of hot water, add salt and bring to the boil. Boil some water in the kettle.',
+				'Peel and quarter the potatoes. Divide the broccoli into small florets. Peel and halve the onion and cut the onion halves into thin strips. Pluck the needles from the rosemary and roughly chop them. Prepare the chicken broth with the chicken stock and 250ml hot water.',
+				'Cut the pork fillet into 2 and season with salt and pepper.',
+				'In a large frying pan heat 1 tbsp oil on medium heat, fry the pork fillets for 7 - 8 minutes on each side until they are light pink. Then take it out of the pan and keep in aluminium foil to keep warm.',
+				'Put the potatoes in the large pot with boiling water and simmer for 12-15 minutes.',
+				'Again in the frying pan heat 1 tbsp oil over medium heat, fry onion strips and half of the chopped rosemary for 2 - 3 minutes, then deglaze with the prepared chicken stock and let it simmer for approx. 5 minutes. Stir in honey, balsamic cream and butter and season to taste with a little salt and pepper.',
+				'Put the broccoli florets in the smaller pot with boiling water and simmer for 3-4 minutes.',
+				'Drain the cooked potatoes into a sieve and put them back into the pot straight away. Add 100 ml milk and grated hard cheese and use a potato masher to make a creamy puree. Season the puree with salt and pepper.',
+				'Distribute the mashed potatoes on plates. Serve the pork fillets and broccoli next to it. Spread the rosemary and honey sauce on top and enjoy.',
+			],
+		},
 	},
 	{
 		id: 7,
@@ -383,6 +448,19 @@ const recipes: IRecipe[] = [
 			},
 		],
 		mainImage: '/images/indian-curry-fish-with-spicy-zucchini.jpeg',
+		method: {
+			steps: [
+				'Preheat the oven to 200 ° C top / bottom heat (180 ° C convection). Heat plenty of salted water into a large saucepan.',
+				'Peel and finely chop garlic. Halve the chilli lengthways, remove the seeds and finely chop the chilli halves (attention: spicy!). Cut the white and green parts of the spring onions separately into fine rings. Cut the ends of the courgette and cut the courgette into 1 cm wide slices. Peel the sweet potato and carrots and cut both into large pieces.',
+				'Carefully rub the fish on both sides with the spice mixture, a little salt and pepper on a flat plate.',
+				'Add courgette, garlic, chilli and white part of the spring onion with 1 tbsp oil, and salt & pepper in a baking dish and bake in the oven for 20-25 minutes.',
+				'Put the sweet potato and carrot in the large saucepan and simmer for 15 minutes until tender.',
+				'Cut the lemon into 6 wedges. In a small bowl, mix the cream yoghurt with the juice from 1 - 2 lemon wedges and season with salt and pepper.',
+				'Heat 1 tbsp oil in a large pan and fry the marinated fish on the skin side for 2 - 3 minutes, then turn and fry for another 2 - 3 minutes, until the fish is golden brown and no longer translucent.',
+				'At the end of the cooking time, drain the sweet potato and carrot pieces through a sieve, collecting some of the cooking water and putting the vegetables back into the pot. Use a potato masher to mash. Stir in 1 tbsp of the dip and season the puree with salt and pepper. Keep warm if necessary.',
+				'Spread the sweet potato and carrot puree and courgette on plates. Serve the fish, lemon wedges and dip. Garnish with the green spring onion rings.',
+			],
+		},
 	},
 	{
 		id: 8,
@@ -520,6 +598,19 @@ const recipes: IRecipe[] = [
 			},
 		],
 		mainImage: '/images/chicken-breast-in-fruity-cranberry-sauce.jpeg',
+		method: {
+			steps: [
+				'Heat plenty of water in the kettle. Preheat the oven to 220 ° C top / bottom heat (200 ° C convection). Add 300ml salted water to a saucepan for the rice.',
+				'Cut the ends of the courgette and cut the courgette into 0.5 cm thin slices. Roughly chop the cranberries. Peel and chop onion and garlic. Pluck the rosemary needles and parsley leaves and chop separately.',
+				'Prepare a chicken broth with the chicken stock and 250 ml of hot water. Add the chopped cranberries, apricot jam and curry to the broth.',
+				'Spread the courgette slices on a baking sheet lined with baking paper (leave a little space for the chicken). With 1 tbsp oil, salt and pepper.',
+				'Bring the salted water to a boil. Rinse the rice in a sieve with cold water until it runs through it clearly and add to the water. Cook covered for approx. 10 minutes. Then take it off the stove and let it soak for another 10 minutes.',
+				'Put the courgette in the oven and bake for about 15 minutes, until the courgette is soft.',
+				'In a large pan 1 tbsp of oil, fry the chicken breast in it for approx. 3 minutes on each side. Then place the chicken breast on the baking sheet, season with salt and pepper and cook in the oven for approx. 10 minutes until it is no longer pink.',
+				'In the same pan, add butter, rosemary needles, onion and garlic and sauté for 4 - 5 minutes. Then deglaze with the chicken & cranberry broth. Increase the heat and let the sauce simmer for 4 - 5 minutes, until the sauce has thickened a little. Season to taste with salt and pepper. Also season the cream yoghurt with a little salt and pepper.',
+				'After the soaking time, loosen the rice with a fork and distribute on plates. Serve with the chicken breast and courgette slices, drizzle with the cranberry sauce, sprinkle with the chopped parsley and enjoy with a dollop of yogurt.',
+			],
+		},
 	},
 	{
 		id: 10,
@@ -553,6 +644,15 @@ const recipes: IRecipe[] = [
 			},
 		],
 		mainImage: '/images/apple-and-onion-galette-with-fresh-goat-cheese.jpeg',
+		method: {
+			steps: [
+				'Preheat the oven to 200 ° C top / bottom heat (180 ° C convection).',
+				'Peel the onion, cut in half and cut into 0.5 cm wide slices. Quarter the apple, peel if you like, remove the core and cut each quarter into 0.5 cm thick slices.',
+				'Pluck the thyme leaves. In a small bowl, Mix 75 g sour cream with the thyme leaves. Season with salt and pepper.',
+				'Place the quiche pastry on a baking sheet with the parchment paper. Brush the dough evenly with thyme sour cream, leaving approx. 1 cm free at the edge. Fold the outer edge inwards so that an approx. 2 cm wide edge is created. Spread the apple and onion wedges on the dough. Scatter goat cream cheese crumble over the top.',
+				'Bake the galette for 20-25 minutes, until the dough is golden brown.',
+			],
+		},
 	},
 	{
 		id: 11,
@@ -618,6 +718,18 @@ const recipes: IRecipe[] = [
 			},
 		],
 		mainImage: '/images/vegan-peanut-curry-with-coconut-rice.jpeg',
+		method: {
+			steps: [
+				'Put 300ml salted water in a saucepan. Boil some water in the kettle.',
+				'Cut the white and green parts of the spring onions separately into thin rings. Peel and finely chop garlic. Halve the pepper, remove the core and cut the pepper halves into 1 cm thick strips. Cut off the ends of the courgette. Halve the courgette lengthways and cut into 1 cm thin crescents. Cut off the ends of the French beans and halve the beans. Halve the chilli, remove the seeds and cut the chilli halves into strips. Cut lime into 6 slices.',
+				'Prepare the vegetable broth with vegetable stock and 100ml hot water.',
+				'Roast the coconut flakes in a small saucepan over a medium heat for 2 - 3 minutes until they turn lightly brown.',
+				'Bring the rice water to a boil. Rinse the rice in a sieve with cold water until it runs through it clearly and add to the water. Cook covered for approx. 10 minutes. Then take it off the stove and let it soak for another 10 minutes.',
+				'In a large pan heat 1 tbsp oil on high heat and fry white spring onion rings and garlic for 2 minutes. Then add the beans, paprika and courgette to the pan and fry for 3 - 4 minutes.',
+				'Then add curry paste and peanut butter and deglaze with coconut milk and vegetable stock. Simmer the curry sauce over a low heat for approx. 8-10 minutes, until the vegetables are soft. At the end of the cooking time 2 Squeeze the lime wedges into the pan and season with salt and pepper.',
+				'Fluff the jasmine rice with a fork and distribute on deep plates. Add the peanut curry and sprinkle with green spring onion rings, chilli strips and peanuts. Enjoy with the rest of the lime wedges.',
+			],
+		},
 	},
 	{
 		id: 12,
